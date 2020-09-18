@@ -29,6 +29,7 @@ public class CardDeckTest {
 				1, 1, 1, 1
 				};
 		for(int i=1;i<=104;i++){
+			assertEquals( "Failure on "+i, i, deck.getCard(i).getNumber());
 			assertEquals( "Failure on "+i, counts[i], deck.getCard(i).getCows());
 		}
 	}
