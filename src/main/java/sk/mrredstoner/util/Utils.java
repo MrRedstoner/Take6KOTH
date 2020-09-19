@@ -38,4 +38,8 @@ public class Utils {
 		} 
 		return array;
 	}
+	
+	public static void doAssert(boolean condition, String message){
+		if(!condition)throw new RuntimeException(message);
+	}
 }

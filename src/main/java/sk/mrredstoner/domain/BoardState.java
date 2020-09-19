@@ -44,4 +44,10 @@ public class BoardState {
 	public int getCowCount(int row){
 		return cowCounts[row];
 	}
+	
+	/**Returns a debug-convenient textual representation*/
+	@Override
+	public String toString(){
+		return String.format("State top %s card %s cow %s", Arrays.toString(topCards), Arrays.toString(cardCounts), Arrays.toString(cowCounts));
+	}
 }

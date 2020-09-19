@@ -2,6 +2,8 @@ package sk.mrredstoner.domain;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -9,7 +11,7 @@ public class CardDeckTest {
 	private static CardDeck deck;
 	
 	@BeforeClass
-	public static void makDeck(){
+	public static void makeDeck(){
 		deck=new CardDeck();
 	}
 	
@@ -42,5 +44,12 @@ public class CardDeckTest {
 	@Test(expected=RuntimeException.class)
 	public void throwsOnHighIndex(){
 		deck.getCard(105);
+	}
+	
+	@Test
+	public void checkSortability(){
+		Card[]cards=deck.getShuffledDeck();
+		Arrays.sort(cards);
+		assertArrayEquals(deck.getUnshuffledDeck(), cards);
 	}
 }

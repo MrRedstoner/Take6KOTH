@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import sk.mrredstoner.util.Utils;
 
-public final class Card {
+public final class Card implements Comparable<Card>{
 	private final int number, cows;
 	
 	/**Creates a new Card with the sepcified number, automatically calculating the number of cows*/
@@ -35,6 +35,11 @@ public final class Card {
 	@Override
 	public int hashCode(){
 		return Objects.hash(number);
+	}
+	
+	@Override
+	public int compareTo(Card c) {
+		return number-c.number;
 	}
 	
 	/**Returns a debug-convenient textual representation*/
